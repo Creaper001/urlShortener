@@ -1,8 +1,6 @@
-const fakes = {
-  "1234": "http://google.com",
-  "4321": "http://leagueoflegends.com",
-};
+import { FakeDB } from "../database/fakeDB";
 
 export default (userID: string, urlID: string) => {
-  return fakes[urlID];
+  const fakeDB = FakeDB.get();
+  return fakeDB.getUrl(userID, urlID);
 };
