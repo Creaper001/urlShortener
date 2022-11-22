@@ -1,0 +1,14 @@
+{
+  "users": {
+    "hashtag": ["varchar(15)", "unique", "NOT NULL"],
+    "name": ["varchar(55)", "unique", "NOT NULL"],
+    "email": ["varchar(155)", "unique", "NOT NULL"],
+    "password": ["varchar(255)", "NOT NULL"],
+    "website": ["varchar(255)", "unique"]
+  },
+  "urls": {
+    "id": ["int", "auto_increment", "PRIMARY KEY"],
+    "path": ["text", "NOT NULL"],
+    "userHashtag": ["varchar(15)", "NOT NULL"]
+  }
+}
