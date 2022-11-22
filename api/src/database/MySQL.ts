@@ -1,10 +1,7 @@
 import mysql, { Connection } from "mysql2";
 
 export class MySQL {
-  private readonly MYSQL_HOST = process.env.MYSQL_HOST;
-  private readonly MYSQL_USER = process.env.MYSQL_USER;
-  private readonly MYSQL_PASSWORD = process.env.MYSQL_PASSWORD;
-  private readonly MYSQL_DATABASE = process.env.MYSQL_DATABASE;
+  private readonly DATABASE_URL = process.env.DATABASE_URL as string;
 
   private _connection: Connection;
   private static _instance: MySQL;
@@ -14,12 +11,7 @@ export class MySQL {
   }
 
   private set() {
-    this._connection = mysql.createConnection({
-      host: this.MYSQL_HOST,
-      user: this.MYSQL_USER,
-      password: this.MYSQL_PASSWORD,
-      database: this.MYSQL_DATABASE,
-    });
+    this._connection = mysql.createConnection(this.DATABASE_URL);
   }
 
   public static get() {
