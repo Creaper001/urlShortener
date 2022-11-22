@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "ts-node --transpile-only src/main.ts",
     "dev": "tsnd --transpile-only src/main.ts",
     "database": "ts-node --transpile-only src/database/build.ts"
   },
