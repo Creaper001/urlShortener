@@ -1,7 +1,7 @@
 import { Auth } from "./Auth";
 
 export class Api {
-  static host = "http://localhost:8000";
+  static host = "http://www.urlm.ga";
   static auth = new Auth();
 
   static async get(url) {
